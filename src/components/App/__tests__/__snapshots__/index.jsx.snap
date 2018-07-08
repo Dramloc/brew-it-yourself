@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> <App /> matches snapshot 1`] = `
+preact-render-spy (1 nodes)
+-------
+<div class="mdc-typography App">
+  <header class="AppNavigation">
+    <h1>Brew It Yourself</h1>
+    <nav>
+      <a
+        onClick={[Function m]}
+        href="/"
+        class="AppNavigation_Link AppNavigation_Link__active"
+      >
+        <span>Recipes</span>
+      </a>
+    </nav>
+  </header>
+  <main class="Page">
+    <span>RecipeList</span>
+  </main>
+</div>
+
+`;
+
+exports[`<App /> <App /> matches snapshot 2`] = `
+Object {
+  "baseTag": Array [],
+  "htmlAttributes": Object {
+    "lang": "en",
+  },
+  "linkTags": Array [],
+  "metaTags": Array [],
+  "noscriptTags": Array [],
+  "onChangeClientState": [Function],
+  "scriptTags": Array [],
+  "styleTags": Array [],
+  "title": "Recipes – Brew It Yourself",
+  "titleAttributes": Object {
+    "itemprop": "name",
+  },
+}
+`;

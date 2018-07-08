@@ -1,0 +1,20 @@
+.Page {
+	max-width: 900px;
+	padding: 100px 20px;
+	width: 100%;
+	min-height: 100%;
+	margin: 0 auto;
+	box-sizing: border-box;
+	animation: fade-in 305ms 0ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes fade-in {
+	0% {
+		transform: translateY(80px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

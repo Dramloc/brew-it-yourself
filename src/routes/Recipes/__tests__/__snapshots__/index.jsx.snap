@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Recipes /> <Recipes /> matches snapshot 1`] = `
+preact-render-spy (1 nodes)
+-------
+<main class="Page">
+  <span>RecipeList</span>
+</main>
+
+`;
+
+exports[`<Recipes /> <Recipes /> matches snapshot 2`] = `
+Object {
+  "baseTag": Array [],
+  "htmlAttributes": Object {},
+  "linkTags": Array [],
+  "metaTags": Array [],
+  "noscriptTags": Array [],
+  "onChangeClientState": [Function],
+  "scriptTags": Array [],
+  "styleTags": Array [],
+  "title": "Recipes",
+  "titleAttributes": Object {},
+}
+`;
