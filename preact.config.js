@@ -1,7 +1,7 @@
-import { readJson } from 'preact-cli/lib/lib/webpack/webpack-base-config';
-import { resolve } from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { resolve } from 'path';
 import prerender from 'preact-cli/lib/lib/webpack/prerender';
+import { readJson } from 'preact-cli/lib/lib/webpack/webpack-base-config';
 
 function renderHTMLPlugin(config) {
 	const { cwd, dest, isProd, src } = config;

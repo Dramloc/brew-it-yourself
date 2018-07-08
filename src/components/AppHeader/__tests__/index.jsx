@@ -1,8 +1,8 @@
 import render from 'preact-render-spy';
-import { AppNavigation } from '../index';
+import { AppHeader } from '../index';
 
-describe('<AppNavigation />', () => {
-	test('<AppNavigation /> matches snapshot', () => {
-		expect(render(<AppNavigation />)).toMatchSnapshot();
+describe('<AppHeader />', () => {
+	test('<AppHeader /> matches snapshot', () => {
+		expect(render(<AppHeader />)).toMatchSnapshot();
 	});
 });

@@ -6,17 +6,19 @@ import Recipes from '../../routes/Recipes';
 import { AppHeader } from '../AppHeader';
 import style from './style';
 
-export const App = () => (
-	<div className={cx('mdc-typography', style.App)}>
-		<Helmet
-			htmlAttributes={{ lang: 'en' }}
-			defaultTitle={manifest.name}
-			titleTemplate={`%s – ${manifest.name}`}
-			titleAttributes={{ itemprop: 'name' }}
-		/>
-		<AppHeader />
-		<Router>
-			<Recipes path="/" />
-		</Router>
-	</div>
-);
+export function App() {
+	return (
+		<div className={cx('mdc-typography', style.App)}>
+			<Helmet
+				htmlAttributes={{ lang: 'en' }}
+				defaultTitle={manifest.name}
+				titleTemplate={`%s – ${manifest.name}`}
+				titleAttributes={{ itemprop: 'name' }}
+			/>
+			<AppHeader />
+			<Router>
+				<Recipes path="/" />
+			</Router>
+		</div>
+	);
+}
