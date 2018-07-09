@@ -9,8 +9,8 @@
     "serve": "npm run build && preact serve",
     "dev": "preact watch --template src/template.html",
     "lint": "eslint src",
-		"test": "jest",
-		"csscomb": "csscomb src"
+    "test": "jest",
+    "csscomb": "csscomb src"
   },
   "devDependencies": {
     "csscomb": "^4.2.0",
@@ -26,10 +26,16 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
     "preact": "^8.2.9",
     "preact-compat": "^3.18.0",
     "preact-helmet": "^4.0.0-alpha-3",
-    "preact-router": "^2.6.1"
+    "preact-redux": "^2.0.3",
+    "preact-router": "^2.6.1",
+    "preact-router-redux": "^4.1.0",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   }
 }
