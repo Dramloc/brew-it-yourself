@@ -1,4 +1,3 @@
-import cx from 'classnames';
 import Helmet from 'preact-helmet';
 import { Router } from 'preact-router';
 import manifest from '../../manifest.json';
@@ -8,7 +7,7 @@ import style from './style';
 
 export function App() {
 	return (
-		<div className={cx('mdc-typography', style.App)}>
+		<div className={style.App}>
 			<Helmet
 				htmlAttributes={{ lang: 'en' }}
 				defaultTitle={manifest.name}

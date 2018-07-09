@@ -92,10 +92,6 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@material/typography@^0.35.0":
-  version "0.35.0"
-  resolved "https://registry.yarnpkg.com/@material/typography/-/typography-0.35.0.tgz#23ad7eb7c9789e69c7c3fa54df8fc311cd7fc4b1"
-
 "@types/configstore@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/configstore/-/configstore-2.1.1.tgz#cd1e8553633ad3185c3f2f239ecff5d2643e92b6"
