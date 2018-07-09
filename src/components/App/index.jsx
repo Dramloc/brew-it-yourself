@@ -1,4 +1,3 @@
-import createBrowserHistory from 'history/createBrowserHistory';
 import Helmet from 'preact-helmet';
 import { Provider } from 'preact-redux';
 import { Router } from 'preact-router';
@@ -7,11 +6,11 @@ import manifest from '../../manifest.json';
 import Recipes from '../../routes/Recipes';
 import configureStore from '../../store/configureStore';
 import { AppHeader } from '../AppHeader';
+import createHistory from './createHistory';
 import style from './style';
 
 const store = configureStore();
-const browserHistory = createBrowserHistory();
-const history = syncHistoryWithStore(browserHistory, store);
+const history = syncHistoryWithStore(createHistory(), store);
 
 export function App() {
 	return (
