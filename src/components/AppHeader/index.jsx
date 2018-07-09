@@ -23,6 +23,9 @@ export function AppHeader() {
 					<AppHeaderLink href="/">
 						<span>Recipes</span>
 					</AppHeaderLink>
+					<AppHeaderLink href="/abv-calculator">
+						<span>ABV Calculator</span>
+					</AppHeaderLink>
 				</nav>
 			</div>
 		</header>

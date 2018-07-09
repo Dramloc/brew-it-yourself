@@ -1,6 +1,7 @@
 import Helmet from 'preact-helmet';
 import { Router } from 'preact-router';
 import manifest from '../../manifest.json';
+import ABVCalculator from '../../routes/ABVCalculator';
 import Recipes from '../../routes/Recipes';
 import { AppHeader } from '../AppHeader';
 import style from './style';
@@ -17,6 +18,7 @@ export function App() {
 			<AppHeader />
 			<Router>
 				<Recipes path="/" />
+				<ABVCalculator path="/abv-calculator" />
 			</Router>
 		</div>
 	);
