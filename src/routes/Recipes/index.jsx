@@ -1,11 +1,9 @@
+import fetch from 'isomorphic-fetch';
 import { Component } from 'preact';
 import Helmet from 'preact-helmet';
-import fetch from 'isomorphic-fetch';
 import { Page } from '../../components/Page';
-
-function RecipeList({ recipes }) {
-	return <span>RecipeList</span>;
-}
+import { RecipeList } from '../../components/RecipeList';
+import { Placeholder as ListPlaceholder } from '../../components/RecipeList/Placeholder';
 
 export default class Recipes extends Component {
 	state = {
@@ -18,16 +16,17 @@ export default class Recipes extends Component {
 			.then(recipes => this.setState({ recipes }));
 	}
 
-	componentDidMount() {
+		componentDidMount() {
 		this.fetchRecipes();
-	}
+		}
 
 	render(_, { recipes }) {
-		return (
-			<Page>
-				<Helmet title="Recipes" />
-				<RecipeList recipes={recipes} />
-			</Page>
-		);
+			return (
+				<Page>
+					<Helmet title="Recipes" />
+				{!recipes && <ListPlaceholder count={25} />}
+				{recipes && <RecipeList recipes={recipes} />}
+				</Page>
+			);
+		}
 	}
-}

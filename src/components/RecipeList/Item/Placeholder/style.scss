@@ -1,0 +1,28 @@
+.Placeholder {
+	&_Image {
+		background-color: rgba(60, 163, 99, 0.24);
+
+		animation: loadingPulse linear 1.5s infinite;
+		animation-delay: inherit;
+	}
+	&_Text {
+		width: 80%;
+		height: 1em;
+		background-color: rgba(0, 0, 0, 0.24);
+
+		animation: loadingPulse linear 1.5s infinite;
+		animation-delay: inherit;
+	}
+}
+
+@keyframes loadingPulse {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.1;
+	}
+	100% {
+		opacity: 1;
+	}
+}

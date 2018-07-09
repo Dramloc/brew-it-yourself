@@ -1,0 +1,58 @@
+@mixin text-ellipsis {
+	overflow: hidden;
+
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+@mixin items-per-line($count) {
+	width: 100% / $count;
+}
+
+.RecipeListItem {
+	position: relative;
+	padding: 10px;
+	list-style-type: none;
+
+	@include items-per-line(1);
+
+	@media (min-width: 599px) {
+		@include items-per-line(2);
+	}
+
+	@media (min-width: 959px) {
+		@include items-per-line(3);
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	&_Image {
+		$aspect-ratio: 16 / 9;
+
+		position: relative;
+		padding-top: 100% / $aspect-ratio;
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+	}
+
+	&_Text {
+		display: block;
+		margin: 8px 0;
+
+		font-family: "Lekton", sans-serif;
+		font-size: 17px;
+		font-weight: 700;
+		letter-spacing: 0.00937em;
+		line-height: 1.75rem;
+
+		@include text-ellipsis();
+	}
+}
