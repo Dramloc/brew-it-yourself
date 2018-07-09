@@ -9,9 +9,11 @@
     "serve": "npm run build && preact serve",
     "dev": "preact watch --template src/template.html",
     "lint": "eslint src",
-    "test": "jest"
+		"test": "jest",
+		"csscomb": "csscomb src"
   },
   "devDependencies": {
+    "csscomb": "^4.2.0",
     "eslint": "^4.19.1",
     "eslint-config-synacor": "^3.0.1",
     "identity-obj-proxy": "^3.0.0",
