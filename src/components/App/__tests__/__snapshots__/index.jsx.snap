@@ -3,18 +3,24 @@
 exports[`<App /> <App /> matches snapshot 1`] = `
 preact-render-spy (1 nodes)
 -------
-<div class="mdc-typography App">
-  <header class="AppNavigation">
-    <h1>Brew It Yourself</h1>
-    <nav>
-      <a
-        onClick={[Function m]}
-        href="/"
-        class="AppNavigation_Link AppNavigation_Link__active"
-      >
-        <span>Recipes</span>
-      </a>
-    </nav>
+<div class="App">
+  <header class="AppHeader">
+    <div>
+      <img
+        src="test-file-stub"
+        alt="The Brew It Yourself logo: hand drawn hops"
+       />
+      <h1>Brew It Yourself</h1>
+      <nav>
+        <a
+          onClick={[Function m]}
+          href="/"
+          class="AppHeader_Link AppHeader_Link__active"
+        >
+          <span>Recipes</span>
+        </a>
+      </nav>
+    </div>
   </header>
   <main class="Page">
     <span>RecipeList</span>

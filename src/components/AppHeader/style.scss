@@ -1,62 +1,81 @@
-.AppNavigation {
+.AppHeader {
+	$height: 72px;
+
 	position: fixed;
 	z-index: 50;
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 64px;
+	height: $height;
 	padding: 0;
+	border-bottom: 1px solid #eaedf0;
 	background-color: #ffffff;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
-	font-family: Roboto Mono, sans-serif;
+	& > div {
+		width: 100%;
+		max-width: 1280px;
+		height: 100%;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	& img {
+		height: 100%;
+		padding: 8px 0;
+		float: left;
+	}
 
 	& h1 {
-		display: block;
-		margin: 0;
-		padding: 0 20px;
+		margin: 0 20px;
 		float: left;
 
-		color: #444444;
-		font-size: 1.143rem;
-		font-weight: 400;
-		letter-spacing: 0.04em;
-		line-height: 64px;
-		text-overflow: ellipsis;
-		white-space: nowrap;
+		font-family: "Lekton", sans-serif;
+		font-size: 21px;
+		font-weight: 700;
+		letter-spacing: 0.0125em;
+		line-height: $height;
 	}
 
 	& nav {
-		width: 100%;
-		width: auto;
 		float: right;
 	}
 
 	&_Link {
 		display: inline-block;
 		position: relative;
-		width: auto;
-		height: 64px;
-		margin: 0 20px;
+		margin: 0 0 0 20px;
 		padding: 0;
 
-		font-size: 1.143rem;
-		font-weight: 400;
-		letter-spacing: 0.04em;
-		line-height: 64px;
-		text-align: center;
+		color: inherit;
+		font-family: "Montserrat", sans-serif;
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 0.08929em;
+		line-height: $height;
 		text-decoration: none;
-		text-overflow: ellipsis;
-		white-space: nowrap;
+		text-transform: uppercase;
 
 		transition: color 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 
 		& span {
 			display: block;
 			margin: 0;
+			padding: 0 10px;
 		}
 
-		&::after {
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: #000000;
+
+			opacity: 0;
+			transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		&:after {
 			content: "";
 			display: block;
 			position: absolute;
@@ -76,8 +95,12 @@
 			color: #3ca363;
 		}
 
-		&__active {
-			color: #444444;
+		&:hover:before {
+			opacity: 0.08;
+		}
+
+		&:active:before {
+			opacity: 0.16;
 		}
 
 		&__active::after {
