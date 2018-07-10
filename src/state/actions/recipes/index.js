@@ -1,4 +1,7 @@
 import fetch from 'isomorphic-fetch';
+import { compose } from 'redux';
+import { selectRecipes } from '../../selectors/recipes';
+import { shouldFetchMetadata } from '../metadata';
 
 const API_URL = 'https://api.punkapi.com/v2/beers';
 
@@ -14,22 +17,10 @@ export const doFetchRecipes = () => async dispatch => {
 	}
 };
 
-const shouldFetchRecipes = state => {
-	const { recipes } = state;
-	if (!recipes) {
-		return true;
-	}
-	if (recipes.fetching) {
-		return false;
-	}
-	if (!recipes.result) {
-		return true;
-	}
-	if (Date.now() - recipes.lastFetch > 10000) {
-		return true;
-	}
-	return false;
-};
+const shouldFetchRecipes = compose(
+	shouldFetchMetadata({ cacheDuration: 60 * 1000 }),
+	selectRecipes
+);
 
 export const doFetchRecipesIfNeeded = () => async (dispatch, getState) => {
 	if (shouldFetchRecipes(getState())) {
