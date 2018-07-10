@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import Helmet from 'preact-helmet';
 import { connect } from 'preact-redux';
-import { doFetchRecipes } from '../../actions/recipes';
+import { doFetchRecipesIfNeeded } from '../../actions/recipes';
 import { Page } from '../../components/Page';
 import { RecipeList } from '../../components/RecipeList';
 import { Placeholder as ListPlaceholder } from '../../components/RecipeList/Placeholder';
@@ -9,7 +9,7 @@ import { Placeholder as ListPlaceholder } from '../../components/RecipeList/Plac
 export default connect(
 	state => state.recipes,
 	dispatch => ({
-		fetchRecipes: () => dispatch(doFetchRecipes())
+		fetchRecipes: () => dispatch(doFetchRecipesIfNeeded())
 	})
 )(
 	class Recipes extends Component {
