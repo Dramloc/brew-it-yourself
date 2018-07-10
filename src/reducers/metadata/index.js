@@ -8,7 +8,7 @@ export const getMetadataReducer = ({ baseType }) => {
 		lastError: null,
 		error: null,
 		lastFetch: null,
-		loading: false
+		fetching: false
 	};
 
 	// here we're returning our customized reducer
@@ -16,21 +16,21 @@ export const getMetadataReducer = ({ baseType }) => {
 		if (action.type === START) {
 			return {
 				...state,
-				loading: true
+				fetching: true
 			};
 		}
 		if (action.type === SUCCESS) {
 			// if successful we store our data
 			// store the lastFetch timestamp
 			// clear out any errors
-			// and set loading to false
+			// and set fetching to false
 			return {
 				...state,
 				result: action.payload,
 				lastFetch: Date.now(),
 				error: null,
 				lastError: null,
-				loading: false
+				fetching: false
 			};
 		}
 		if (action.type === ERROR) {
@@ -42,7 +42,7 @@ export const getMetadataReducer = ({ baseType }) => {
 				...state,
 				lastError: Date.now(),
 				error: action.payload,
-				loading: false
+				fetching: false
 			};
 		}
 

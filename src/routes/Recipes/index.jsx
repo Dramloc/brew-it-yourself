@@ -18,11 +18,11 @@ export default connect(
 			fetchRecipes();
 		}
 
-		render({ result, loading }) {
+		render({ result, fetching }) {
 			return (
 				<Page>
 					<Helmet title="Recipes" />
-					{loading && <ListPlaceholder count={25} />}
+					{fetching && <ListPlaceholder count={25} />}
 					{result && <RecipeList recipes={result} />}
 				</Page>
 			);
