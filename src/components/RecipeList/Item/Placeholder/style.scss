@@ -2,7 +2,7 @@
 	&_Image {
 		background-color: rgba(60, 163, 99, 0.24);
 
-		animation: loadingPulse linear 1.5s infinite;
+		animation: loading-pulse linear 1.5s infinite;
 		animation-delay: inherit;
 	}
 	&_Text {
@@ -10,12 +10,12 @@
 		height: 1em;
 		background-color: rgba(0, 0, 0, 0.24);
 
-		animation: loadingPulse linear 1.5s infinite;
+		animation: loading-pulse linear 1.5s infinite;
 		animation-delay: inherit;
 	}
 }
 
-@keyframes loadingPulse {
+@keyframes loading-pulse {
 	0% {
 		opacity: 1;
 	}
