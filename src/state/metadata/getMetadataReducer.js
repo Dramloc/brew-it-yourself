@@ -1,7 +1,5 @@
-export const getMetadataReducer = ({ baseType }) => {
-	const START = `${baseType}_STARTED`;
-	const SUCCESS = `${baseType}_SUCCEEDED`;
-	const ERROR = `${baseType}_FAILED`;
+export const getMetadataReducer = ({ types }) => {
+	const [requestType, successType, failureType] = types;
 
 	const initialState = {
 		result: null,
@@ -13,13 +11,13 @@ export const getMetadataReducer = ({ baseType }) => {
 
 	// here we're returning our customized reducer
 	return (state = initialState, action) => {
-		if (action.type === START) {
+		if (action.type === requestType) {
 			return {
 				...state,
 				fetching: true
 			};
 		}
-		if (action.type === SUCCESS) {
+		if (action.type === successType) {
 			// if successful we store our data
 			// store the lastFetch timestamp
 			// clear out any errors
@@ -33,7 +31,7 @@ export const getMetadataReducer = ({ baseType }) => {
 				fetching: false
 			};
 		}
-		if (action.type === ERROR) {
+		if (action.type === failureType) {
 			// we still want to leave existing
 			// data intact as well as "last fetch"
 			// which would let us determine if the
