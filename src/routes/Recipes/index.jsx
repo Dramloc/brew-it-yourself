@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import Helmet from 'preact-helmet';
 import { connect } from 'preact-redux';
-import { doFetchRecipesIfNeeded } from '../../actions/recipes';
+import { doFetchRecipesIfNeeded } from '../../state/actions/recipes';
 import { Page } from '../../components/Page';
 import { RecipeList } from '../../components/RecipeList';
 import { Placeholder as ListPlaceholder } from '../../components/RecipeList/Placeholder';
