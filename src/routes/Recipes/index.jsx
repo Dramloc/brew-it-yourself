@@ -4,8 +4,8 @@ import { connect } from 'preact-redux';
 import { Page } from '../../components/Page';
 import { RecipeList } from '../../components/RecipeList';
 import { Placeholder as ListPlaceholder } from '../../components/RecipeList/Placeholder';
-import { doFetchRecipesIfNeeded } from '../../state/actions/recipes';
-import { selectRecipes } from '../../state/selectors/recipes';
+import { doFetchRecipesIfNeeded } from '../../state/recipes/doFetchRecipesIfNeeded';
+import { selectRecipes } from '../../state/recipes/selectRecipes';
 
 export default connect(
 	selectRecipes,
