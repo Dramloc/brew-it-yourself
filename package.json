@@ -13,6 +13,7 @@
     "csscomb": "csscomb src"
   },
   "devDependencies": {
+    "babel-plugin-async-to-promises": "^1.0.5",
     "csscomb": "^4.2.0",
     "eslint": "^4.19.1",
     "eslint-config-synacor": "^3.0.1",
