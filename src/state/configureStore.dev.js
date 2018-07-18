@@ -1,14 +1,14 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import { createLogger } from 'redux-logger';
-import thunk from 'redux-thunk';
-import { rootReducer } from '../state/rootReducer';
+import { middlewares } from './middlewares';
+import { rootReducer } from './rootReducer';
 
 const configureStore = (preloadedState = {}) =>
 	createStore(
 		rootReducer,
 		preloadedState,
 		compose(
-			applyMiddleware(thunk, createLogger()),
+			applyMiddleware(...middlewares, createLogger()),
 			typeof window !== 'undefined' &&
 				window.__REDUX_DEVTOOLS_EXTENSION__ &&
 				window.__REDUX_DEVTOOLS_EXTENSION__()

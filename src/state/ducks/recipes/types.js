@@ -1,0 +1,7 @@
+export const FETCH_LIST_REQUEST = '@recipes/FETCH_LIST_REQUEST';
+export const FETCH_LIST_SUCCESS = '@recipes/FETCH_LIST_SUCCESS';
+export const FETCH_LIST_FAILURE = '@recipes/FETCH_LIST_FAILURE';
+
+export const FETCH_DETAILS_REQUEST = '@recipes/FETCH_DETAILS_REQUEST';
+export const FETCH_DETAILS_SUCCESS = '@recipes/FETCH_DETAILS_SUCCESS';
+export const FETCH_DETAILS_FAILURE = '@recipes/FETCH_DETAILS_FAILURE';

@@ -4,7 +4,7 @@ import { Router } from 'preact-router';
 import { syncHistoryWithStore } from 'preact-router-redux';
 import manifest from '../../manifest.json';
 import Recipes from '../../routes/Recipes';
-import configureStore from '../../store/configureStore';
+import configureStore from '../../state/configureStore';
 import { AppHeader } from '../AppHeader';
 import createHistory from './createHistory';
 import style from './style';

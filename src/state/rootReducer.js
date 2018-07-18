@@ -1,8 +1,8 @@
-import { routerReducer } from 'preact-router-redux';
+import { routerReducer as routing } from 'preact-router-redux';
 import { combineReducers } from 'redux';
-import { recipesReducer } from './recipes/recipesReducer';
+import { reducer as recipes } from './ducks/recipes/reducers';
 
 export const rootReducer = combineReducers({
-	routing: routerReducer,
-	recipes: recipesReducer
+	routing,
+	recipes
 });

@@ -1,32 +1,34 @@
 import { Component } from 'preact';
 import Helmet from 'preact-helmet';
 import { connect } from 'preact-redux';
+import { bindActionCreators } from 'redux';
 import { Page } from '../../components/Page';
 import { RecipeList } from '../../components/RecipeList';
 import { Placeholder as ListPlaceholder } from '../../components/RecipeList/Placeholder';
-import { doFetchRecipesIfNeeded } from '../../state/recipes/doFetchRecipesIfNeeded';
-import { selectRecipes } from '../../state/recipes/selectRecipes';
+import { doFetchList as doFetchRecipesList } from '../../state/ducks/recipes/actions';
+import { selectListFetching, selectListHydratedResult } from '../../state/ducks/recipes/selectors';
+
+export class Recipes extends Component {
+	componentDidMount() {
+		const { doFetchRecipesList } = this.props;
+		doFetchRecipesList();
+	}
+
+	render({ recipes, fetching }) {
+		return (
+			<Page>
+				<Helmet title="Recipes" />
+				{fetching && <ListPlaceholder count={25} />}
+				{recipes && <RecipeList recipes={recipes} />}
+			</Page>
+		);
+	}
+}
 
 export default connect(
-	selectRecipes,
-	dispatch => ({
-		fetchRecipes: () => dispatch(doFetchRecipesIfNeeded())
-	})
-)(
-	class Recipes extends Component {
-		componentDidMount() {
-			const { fetchRecipes } = this.props;
-			fetchRecipes();
-		}
-
-		render({ result, fetching }) {
-			return (
-				<Page>
-					<Helmet title="Recipes" />
-					{fetching && <ListPlaceholder count={25} />}
-					{result && <RecipeList recipes={result} />}
-				</Page>
-			);
-		}
-	}
-);
+	state => ({
+		recipes: selectListHydratedResult(state),
+		fetching: selectListFetching(state)
+	}),
+	dispatch => bindActionCreators({ doFetchRecipesList }, dispatch)
+)(Recipes);
