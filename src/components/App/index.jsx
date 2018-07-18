@@ -3,6 +3,7 @@ import { Provider } from 'preact-redux';
 import { Router } from 'preact-router';
 import { syncHistoryWithStore } from 'preact-router-redux';
 import manifest from '../../manifest.json';
+import Recipe from '../../routes/Recipe';
 import Recipes from '../../routes/Recipes';
 import configureStore from '../../state/configureStore';
 import { AppHeader } from '../AppHeader';
@@ -25,6 +26,7 @@ export function App() {
 				<AppHeader />
 				<Router history={history}>
 					<Recipes path="/" />
+					<Recipe path="/recipes/:id" />
 				</Router>
 			</div>
 		</Provider>
