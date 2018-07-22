@@ -3,28 +3,24 @@ import logo from '../../assets/images/logo.png';
 import manifest from '../../manifest.json';
 import style from './style';
 
-function AppHeaderLink(props) {
-	return (
-		<Link
-			className={style.AppHeader_Link}
-			activeClassName={style.AppHeader_Link__active}
-			{...props}
-		/>
-	);
-}
+const AppHeaderLink = props => (
+	<Link
+		className={style.AppHeader_Link}
+		activeClassName={style.AppHeader_Link__active}
+		{...props}
+	/>
+);
 
-export function AppHeader() {
-	return (
-		<header className={style.AppHeader}>
-			<div>
-				<img src={logo} alt="The Brew It Yourself logo: hand drawn hops" />
-				<h1>{manifest.name}</h1>
-				<nav>
-					<AppHeaderLink href="/">
-						<span>Recipes</span>
-					</AppHeaderLink>
-				</nav>
-			</div>
-		</header>
-	);
-}
+export const AppHeader = () => (
+	<header className={style.AppHeader}>
+		<div>
+			<img src={logo} alt="The Brew It Yourself logo: hand drawn hops" />
+			<h1>{manifest.name}</h1>
+			<nav>
+				<AppHeaderLink href="/">
+					<span>Recipes</span>
+				</AppHeaderLink>
+			</nav>
+		</div>
+	</header>
+);

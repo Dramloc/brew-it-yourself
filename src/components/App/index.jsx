@@ -13,22 +13,20 @@ import style from './style';
 const store = configureStore();
 const history = syncHistoryWithStore(createHistory(), store);
 
-export function App() {
-	return (
-		<Provider store={store}>
-			<div className={style.App}>
-				<Helmet
-					htmlAttributes={{ lang: 'en' }}
-					defaultTitle={manifest.name}
-					titleTemplate={`%s – ${manifest.name}`}
-					titleAttributes={{ itemprop: 'name' }}
-				/>
-				<AppHeader />
-				<Router history={history}>
-					<Recipes path="/" />
-					<Recipe path="/recipes/:id" />
-				</Router>
-			</div>
-		</Provider>
-	);
-}
+export const App = () => (
+	<Provider store={store}>
+		<div className={style.App}>
+			<Helmet
+				htmlAttributes={{ lang: 'en' }}
+				defaultTitle={manifest.name}
+				titleTemplate={`%s – ${manifest.name}`}
+				titleAttributes={{ itemprop: 'name' }}
+			/>
+			<AppHeader />
+			<Router history={history}>
+				<Recipes path="/" />
+				<Recipe path="/recipes/:id" />
+			</Router>
+		</div>
+	</Provider>
+);
