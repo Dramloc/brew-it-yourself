@@ -1,4 +1,4 @@
+import { apiMiddleware } from 'redux-api-middleware';
 import thunk from 'redux-thunk';
-import { fetchMiddleware } from './fetch';
 
-export const middlewares = [thunk, fetchMiddleware];
+export const middlewares = [thunk, apiMiddleware];
