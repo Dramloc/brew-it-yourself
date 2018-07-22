@@ -1,17 +1,14 @@
 import Helmet from 'preact-helmet';
 import { Provider } from 'preact-redux';
 import { Router } from 'preact-router';
-import { syncHistoryWithStore } from 'preact-router-redux';
 import manifest from '../../manifest.json';
 import Recipe from '../../routes/Recipe';
 import Recipes from '../../routes/Recipes';
 import configureStore from '../../state/configureStore';
 import { AppHeader } from '../AppHeader';
-import createHistory from './createHistory';
 import style from './style';
 
 const store = configureStore();
-const history = syncHistoryWithStore(createHistory(), store);
 
 export const App = () => (
 	<Provider store={store}>
@@ -23,7 +20,7 @@ export const App = () => (
 				titleAttributes={{ itemprop: 'name' }}
 			/>
 			<AppHeader />
-			<Router history={history}>
+			<Router>
 				<Recipes path="/" />
 				<Recipe path="/recipes/:id" />
 			</Router>

@@ -6730,10 +6730,6 @@ preact-render-to-string@^3.6.0, preact-render-to-string@^3.6.3:
   dependencies:
     pretty-format "^3.5.1"
 
-preact-router-redux@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/preact-router-redux/-/preact-router-redux-4.1.0.tgz#8c9be6a3055f32d80f08e5f5fe60f9a51e19287f"
-
 preact-router@^2.5.2, preact-router@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/preact-router/-/preact-router-2.6.1.tgz#eec60a9f2c07a1ae4fbc6604d8a0415742fbbd89"
