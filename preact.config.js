@@ -90,14 +90,6 @@ function replacePlugins(name, replacements) {
 }
 
 export default (config, env, helpers) => {
-	const babel = config.module.loaders.filter(loader => loader.loader === 'babel-loader')[0].options;
-
-	// Blacklist regenerator within env preset:
-	babel.presets[0][1].exclude.push('transform-async-to-generator');
-
-	// Add Kneden
-	babel.plugins.push(require.resolve('babel-plugin-async-to-promises'));
-
 	const plugins = renderHTMLPlugin(env);
 	config.plugins = config.plugins.map(replacePlugins('HtmlWebpackPlugin', plugins));
 };
