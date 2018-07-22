@@ -49,5 +49,5 @@ export const doFetchDetails = id => ({
 export const doSelectDetails = id => ({
 	type: SELECT_DETAILS,
 	// FIXME: should use a single id, but mock API returns an array
-	payload: [id]
+	payload: [+id]
 });
