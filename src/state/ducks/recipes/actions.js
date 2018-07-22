@@ -8,7 +8,8 @@ import {
 	FETCH_DETAILS_SUCCESS,
 	FETCH_LIST_FAILURE,
 	FETCH_LIST_REQUEST,
-	FETCH_LIST_SUCCESS
+	FETCH_LIST_SUCCESS,
+	SELECT_DETAILS
 } from './types';
 
 const API_ENDPOINT = 'https://api.punkapi.com/v2/beers';
@@ -43,4 +44,10 @@ export const doFetchDetails = id => ({
 		],
 		bailout: state => selectDetailsHydratedResult(state)
 	}
+});
+
+export const doSelectDetails = id => ({
+	type: SELECT_DETAILS,
+	// FIXME: should use a single id, but mock API returns an array
+	payload: [id]
 });

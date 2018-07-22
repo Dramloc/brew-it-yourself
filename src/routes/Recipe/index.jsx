@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { Page } from '../../components/Page';
 import { RecipeListItem } from '../../components/RecipeList/Item';
 import { Placeholder as RecipeListItemPlaceholder } from '../../components/RecipeList/Item/Placeholder';
-import { doFetchDetails } from '../../state/ducks/recipes/actions';
+import { doFetchDetails, doSelectDetails } from '../../state/ducks/recipes/actions';
 import {
 	selectDetailsFetching,
 	selectDetailsHydratedResult
@@ -13,7 +13,8 @@ import {
 
 export class Recipe extends Component {
 	componentDidMount() {
-		const { id, doFetchDetails } = this.props;
+		const { id, doFetchDetails, doSelectDetails } = this.props;
+		doSelectDetails(id);
 		doFetchDetails(id);
 	}
 
@@ -33,5 +34,5 @@ export default connect(
 		recipe: selectDetailsHydratedResult(state),
 		fetching: selectDetailsFetching(state)
 	}),
-	dispatch => bindActionCreators({ doFetchDetails }, dispatch)
+	dispatch => bindActionCreators({ doFetchDetails, doSelectDetails }, dispatch)
 )(Recipe);
