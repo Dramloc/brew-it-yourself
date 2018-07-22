@@ -47,13 +47,15 @@ const handleError = (error, baseType) => ({
 });
 
 export const fetchMiddleware = dispatch => next => async action => {
-	// FIXME: should use meta to check if middleware should triggered
+	if (action.meta === undefined) {
+		return next(action);
+	}
 	const matched = action.type.match(REQUEST_PATTERN);
 	if (matched === null) {
 		return next(action);
 	}
 	const baseType = matched[1];
-	const { url, options, schema, as = 'json' } = action.payload;
+	const { url, options, schema, as = 'json' } = action.meta;
 
 	// FIXME: only fetch if required. Add a middleware before this one?
 	next(action);
